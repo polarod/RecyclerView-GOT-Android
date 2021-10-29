@@ -1,6 +1,6 @@
 package es.murallaromana.pmdm.recyclerviewejemplo.modelos.entidades
 
-class Personajes(
+class Personaje(
     var id: Long,
     var nombre: String,
     var apellidos: String,
@@ -19,6 +19,11 @@ class Personajes(
 
     }
 
+    fun mostrar():String{
+        var idString = id.toString()
+        return idString+""+nombre +""+apellidos+""+titulo+""+familia+url
+
+    }
     fun getNombreYApellidos2 () = "$nombre $apellidos"
 
 }

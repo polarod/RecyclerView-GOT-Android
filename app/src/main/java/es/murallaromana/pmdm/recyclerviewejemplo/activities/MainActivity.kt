@@ -3,9 +3,11 @@ package es.murallaromana.pmdm.recyclerviewejemplo.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import es.murallaromana.pmdm.recyclerviewejemplo.R
+import es.murallaromana.pmdm.recyclerviewejemplo.adapters.ListaPersonajesAdapter
 import es.murallaromana.pmdm.recyclerviewejemplo.databinding.ActivityMainBinding
-import es.murallaromana.pmdm.recyclerviewejemplo.modelos.entidades.Personajes
+import es.murallaromana.pmdm.recyclerviewejemplo.modelos.dao.PersonajesDao
+import es.murallaromana.pmdm.recyclerviewejemplo.modelos.dao.PersonajesDaoMockImpl
+import es.murallaromana.pmdm.recyclerviewejemplo.modelos.entidades.Personaje
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,16 +15,21 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        //Inflo las vistas
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //obtengo los datos de los personajes
+        val personajesDao = PersonajesDaoMockImpl()
+        val listaPersonajes = personajesDao.getTodos()
 
+        //Creo los componentes del RecyclerView
         val layoutManager =  LinearLayoutManager(this)
+        val adapter = ListaPersonajesAdapter(listaPersonajes)
 
-        // prueba personaje
-        val p = Personajes(0,"loco","qlowasky","mykewasozsky","puta","la mia",)
-        println(p.getNombreYApellidos())
+        //Asocio el RVIEW con sus componentes
+        binding.rvListaPersonajes.adapter = adapter
+        binding.rvListaPersonajes.layoutManager = layoutManager
 
     }
 }
