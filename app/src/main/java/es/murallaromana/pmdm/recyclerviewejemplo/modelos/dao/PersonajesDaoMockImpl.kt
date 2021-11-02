@@ -6,10 +6,10 @@ class PersonajesDaoMockImpl():PersonajesDao {
 
 // get todos igualando al listOf
     override fun getTodos() = listOf(
-        Personaje(0,"Daenerys", "Targaryen", "Mother of Dragons", "House Targaryen","uw"),
-        Personaje(0,"Samwell", "Tarly", "Maester", "House Tarly", "uwu"),
-        Personaje(0,"Arya", "Stark", "No One", "House Stark","uwu"),
-        Personaje(0,"Brienne", "Tarth", "Briene of Tarth", "Tarth", "uwu"))
+        Personaje(0,"Daenerys", "Targaryen", "Mother of Dragons", "House Targaryen","https://thronesapi.com/assets/images/daenerys.jpg"),
+        Personaje(1,"Samwell", "Tarly", "Maester", "House Tarly", "https://thronesapi.com/assets/images/sam.jpg"),
+        Personaje(2,"Arya", "Stark", "No One", "House Stark","https://thronesapi.com/assets/images/arya-stark.jpg"),
+        Personaje(3,"Brienne", "Tarth", "Briene of Tarth", "House Tarth", "https://thronesapi.com/assets/images/brienne-tarth.jpeg"))
 
 
 

@@ -3,6 +3,7 @@ package es.murallaromana.pmdm.recyclerviewejemplo.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.squareup.picasso.Picasso
 import es.murallaromana.pmdm.recyclerviewejemplo.adapters.ListaPersonajesAdapter
 import es.murallaromana.pmdm.recyclerviewejemplo.databinding.ActivityMainBinding
 import es.murallaromana.pmdm.recyclerviewejemplo.modelos.dao.PersonajesDao
@@ -30,6 +31,12 @@ class MainActivity : AppCompatActivity() {
         //Asocio el RVIEW con sus componentes
         binding.rvListaPersonajes.adapter = adapter
         binding.rvListaPersonajes.layoutManager = layoutManager
+
+
+
+
+
+
 
     }
 }
